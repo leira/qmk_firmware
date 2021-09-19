@@ -1,4 +1,4 @@
-// Copyright 2022 QMK
+// Copyright 2023 QMK
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 /*******************************************************************************
@@ -70,6 +70,8 @@ enum qk_keycode_ranges {
     QK_AUDIO_MAX                   = 0x74BF,
     QK_STENO                       = 0x74C0,
     QK_STENO_MAX                   = 0x74FF,
+    QK_PLOVER_HID                  = 0x7500,
+    QK_PLOVER_HID_MAX              = 0x7540,
     QK_MACRO                       = 0x7700,
     QK_MACRO_MAX                   = 0x777F,
     QK_LIGHTING                    = 0x7800,
@@ -1295,6 +1297,7 @@ enum qk_keycode_defines {
 #define IS_QK_PROGRAMMABLE_BUTTON(code) ((code) >= QK_PROGRAMMABLE_BUTTON && (code) <= QK_PROGRAMMABLE_BUTTON_MAX)
 #define IS_QK_AUDIO(code) ((code) >= QK_AUDIO && (code) <= QK_AUDIO_MAX)
 #define IS_QK_STENO(code) ((code) >= QK_STENO && (code) <= QK_STENO_MAX)
+#define IS_QK_PLOVER_HID(code) ((code) >= QK_PLOVER_HID && (code) <= QK_PLOVER_HID_MAX)
 #define IS_QK_MACRO(code) ((code) >= QK_MACRO && (code) <= QK_MACRO_MAX)
 #define IS_QK_LIGHTING(code) ((code) >= QK_LIGHTING && (code) <= QK_LIGHTING_MAX)
 #define IS_QK_QUANTUM(code) ((code) >= QK_QUANTUM && (code) <= QK_QUANTUM_MAX)
@@ -1321,3 +1324,4 @@ enum qk_keycode_defines {
 #define IS_BACKLIGHT_KEYCODE(code) ((code) >= QK_BACKLIGHT_ON && (code) <= QK_BACKLIGHT_TOGGLE_BREATHING)
 #define IS_RGB_KEYCODE(code) ((code) >= RGB_TOG && (code) <= RGB_MODE_TWINKLE)
 #define IS_QUANTUM_KEYCODE(code) ((code) >= QK_BOOTLOADER && (code) <= QK_AUTOCORRECT_TOGGLE)
+
