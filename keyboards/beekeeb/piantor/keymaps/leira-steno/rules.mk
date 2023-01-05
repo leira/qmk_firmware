@@ -1,0 +1,6 @@
+SERIAL_DRIVER = vendor
+
+PLOVER_HID_ENABLE = yes
+
+# Debug
+CONSOLE_ENABLE = yes
