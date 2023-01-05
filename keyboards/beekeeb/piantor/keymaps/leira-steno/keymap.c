@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
+#include "keymap_plover_hid.h"
 
 // define layer names
 enum layer_names {
@@ -26,6 +27,7 @@ enum layer_names {
 #define NUMBER MO(_NUMBER)
 #define SYMBOL MO(_SYMBOL)
 
+#define MEDIA MO(_MEDIA)
 #define HIDDEN MO(_HIDDEN)
 #define T_QWERTY TO(_QWERTY)
 #define T_PLOVER TO(_PLOVER)
@@ -70,6 +72,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
         _______, KC_F11,  _______, _______, _______, _______,                     _______, _______, _______, _______, KC_F12,  _______,
         _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
+                                            _______, _______, _______,   _______, _______, _______
+    ),
+
+    [_PLOVER] = LAYOUT_split_3x6_3(
+        PLV_X1,  PLV_SL,  PLV_TL,  PLV_PL,  PLV_HL,  PLV_STR,                     PLV_STR, PLV_FR,  PLV_PR,  PLV_LR,  PLV_TR,  PLV_DR,
+        PLV_X2,  PLV_SL,  PLV_KL,  PLV_WL,  PLV_RL,  PLV_STR,                     PLV_STR, PLV_RR,  PLV_BR,  PLV_GR,  PLV_SR,  PLV_ZR,
+        PLV_X3,  PLV_X4,  PLV_X5,  PLV_X6,  PLV_X7,  PLV_X8,                      PLV_X9,  PLV_X10, PLV_X11, PLV_X12, MEDIA,   PLV_X13,
+                                            PLV_NUM, PLV_A,   PLV_O,     PLV_E,   PLV_U,   PLV_NUM
+    ),
+
+    [_MEDIA] = LAYOUT_split_3x6_3(
+        _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,                     KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, _______, _______,
+        _______, _______, _______, _______, _______, _______,                     _______, KC_MUTE, _______, _______, _______, _______,
+                                            _______, _______, _______,   KC_MPLY, HIDDEN,  _______
+    ),
+
+    [_HIDDEN] = LAYOUT_split_3x6_3(
+        _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, T_PLOVER,                    _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, T_QWERTY,                    _______, _______, _______, _______, _______, _______,
                                             _______, _______, _______,   _______, _______, _______
     ),
 };
