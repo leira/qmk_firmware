@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
-#include "keymap_plover_hid.h"
+#include "keymap_steno.h"
 
 // define layer names
 enum layer_names {
@@ -76,10 +76,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_PLOVER] = LAYOUT_split_3x6_3(
-        PLV_X1,  PLV_SL,  PLV_TL,  PLV_PL,  PLV_HL,  PLV_STR,                     PLV_STR, PLV_FR,  PLV_PR,  PLV_LR,  PLV_TR,  PLV_DR,
-        PLV_X2,  PLV_SL,  PLV_KL,  PLV_WL,  PLV_RL,  PLV_STR,                     PLV_STR, PLV_RR,  PLV_BR,  PLV_GR,  PLV_SR,  PLV_ZR,
-        PLV_X3,  PLV_X4,  PLV_X5,  PLV_X6,  PLV_X7,  PLV_X8,                      PLV_X9,  PLV_X10, PLV_X11, PLV_X12, MEDIA,   PLV_X13,
-                                            PLV_NUM, PLV_A,   PLV_O,     PLV_E,   PLV_U,   PLV_NUM
+        XXXXXXX, STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1,                     STN_ST3, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
+        XXXXXXX, STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2,                     STN_ST4, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, MEDIA,   XXXXXXX,
+                                            STN_NA,  STN_A,   STN_O,     STN_E,   STN_U,   STN_NB
     ),
 
     [_MEDIA] = LAYOUT_split_3x6_3(
@@ -99,8 +99,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 void keyboard_post_init_user(void) {
   // Customise these values to desired behaviour
-  debug_enable=true;
-  debug_matrix=true;
-  debug_keyboard=true;
-  //debug_mouse=true;
+  // debug_enable=true;
+  // debug_matrix=true;
+  // debug_keyboard=true;
+  // debug_mouse=true;
 }

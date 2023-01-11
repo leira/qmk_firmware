@@ -1,6 +1,7 @@
 SERIAL_DRIVER = vendor
 
-PLOVER_HID_ENABLE = yes
+STENO_ENABLE = yes
+STENO_PROTOCOL = geminipr
 
 # Debug
-CONSOLE_ENABLE = yes
+CONSOLE_ENABLE = no
