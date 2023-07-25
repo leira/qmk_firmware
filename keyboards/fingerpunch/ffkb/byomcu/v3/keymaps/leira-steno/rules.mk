@@ -1,0 +1,11 @@
+# STENO_ENABLE = yes
+# STENO_PROTOCOL = geminipr
+
+CIRQUE_ENABLE = no
+FP_TRACKBALL_ENABLE = yes
+RGB_MATRIX_ENABLE = yes
+FP_EC11 = yes
+CONVERT_TO = stemcell
+
+# Debug
+CONSOLE_ENABLE = no
