@@ -15,11 +15,11 @@ enum layer_names {
 
 // define special keys
 #define LALT_TAB LALT_T(KC_TAB)
-#define LCTL_ESC LCTL_T(KC_ESC)
-#define LSFT_GRV LSFT_T(KC_GRV)
+#define LSFT_ESC LSFT_T(KC_ESC)
+#define LCTL_GRV LCTL_T(KC_GRV)
 
-#define FUN_QUOT LT(_FUNKEY, KC_QUOT)
-#define RSFT_BSL RSFT_T(KC_BSLS)
+#define RSFT_QUOT LSFT_T(KC_QUOT)
+#define FUN_BSLS LT(_FUNKEY, KC_BSLS)
 #define MED_SLSH LT(_MEDIA, KC_SLSH)
 
 #define NUMBER MO(_NUMBER)
@@ -35,19 +35,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * ┌───────┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───────┐
     * │Tab|Alt│ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │  Bsp  │
     * ├───────┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───────┤
-    * │Esc|Ctl│ A │ S │ D │ F │ G │       │ H │ J │ K │ L │ ; │ ' |FUN│
+    * │Esc|Sft│ A │ S │ D │ F │ G │       │ H │ J │ K │ L │ ; │ ' |Sft│
     * ├───────┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───────┤
-    * │ ` |Sft│ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ / │ \ |Sft│
+    * │ ` |Ctl│ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ / │ \ |FUN│
     * └───────┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───────┘
     *            ┌───┐  ┌───┬───┬───┐   ┌───┬───┬───┐  ┌───┐
-    *            │MUT│  │GUI│NUM│   │   │   │SYM│RET│  │PLY│
+    *            │MUT│  │GUI│   │NUM│   │SYM│   │RET│  │PLY│
     *            └───┘  └───┴───┴───┘   └───┴───┴───┘  └───┘
     */
     [_QWERTY] = LAYOUT_ffkb(
         LALT_TAB,KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-        LCTL_ESC,KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, FUN_QUOT,
-        LSFT_GRV,KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                        KC_N,    KC_M,    KC_COMM, KC_DOT,  MED_SLSH,RSFT_BSL,
-                          KC_MUTE,          KC_LGUI, NUMBER,  KC_SPC,    KC_SPC,  SYMBOL,  KC_ENT,           KC_MPLY
+        LSFT_ESC,KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, RSFT_QUOT,
+        LCTL_GRV,KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                        KC_N,    KC_M,    KC_COMM, KC_DOT,  MED_SLSH,FUN_BSLS,
+                          KC_MUTE,          KC_LGUI, KC_SPC,  NUMBER,   SYMBOL,   KC_SPC,  KC_ENT,           KC_MPLY
     ),
 
     [_NUMBER] = LAYOUT_ffkb(
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,                     KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, _______, _______,
         _______, _______, _______, _______, _______, _______,                     _______, KC_MUTE, _______, _______, _______, _______,
-                          _______,          _______, _______, _______,   KC_MPLY, HIDDEN,  _______,          _______
+                          _______,          _______, _______, _______,   HIDDEN,  KC_MPLY, _______,          _______
     ),
 
     [_HIDDEN] = LAYOUT_ffkb(
