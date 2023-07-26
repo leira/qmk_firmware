@@ -1,3 +1,8 @@
+// Auto mouse layer
+#define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+#define AUTO_MOUSE_DEFAULT_LAYER 7
+
+// rotary encoders
 #define FP_ENC_0_LAYER_VOLUME         0
 #define FP_ENC_0_LAYER_ZOOM           1
 // Disabled functions
