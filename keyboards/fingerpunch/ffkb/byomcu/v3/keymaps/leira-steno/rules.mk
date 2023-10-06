@@ -4,7 +4,8 @@
 CIRQUE_ENABLE = no
 FP_TRACKBALL_ENABLE = yes
 RGB_MATRIX_ENABLE = yes
-FP_EC11 = yes
+FP_EC11 = no
+FP_EVQ = yes
 CONVERT_TO = stemcell
 
 # Debug
